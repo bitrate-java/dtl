@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Predictive Maintenance for PV Manufacturing Equipment</title>
+    <meta name="description" content="AI & Machine Learning-driven predictive maintenance platform for solar photovoltaic manufacturing. Predict failures, minimize downtime, and maximize throughput.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Glowing Accent Orbs for Futuristic Aesthetic -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <i data-lucide="shield-alert" class="logo-icon glow-cyan"></i>
+                <span class="logo-text">Aegis<span class="text-accent">PV</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#challenges" class="nav-link">Challenges</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#simulations" class="nav-link">Simulations</a></li>
+                <li><a href="#dashboard" class="nav-link nav-btn-glow">Live Dashboard</a></li>
+                <li><a href="#results" class="nav-link">Results</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#team" class="nav-link">Divisions</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#dashboard" class="btn btn-primary btn-sm header-cta">Launch SCADA</a>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="grid-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <span class="badge-pulse"><span class="pulse-dot"></span>Industry 4.0 Standard</span>
+                        <span class="badge-text">Enterprise AI Console</span>
+                    </div>
+                    <h1 class="hero-title animate-gradient">
+                        AI-Based Predictive Maintenance <br>
+                        <span class="text-glow">for PV Manufacturing Equipment</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Leveraging Artificial Intelligence, Machine Learning, and Real-Time Equipment Monitoring to Predict Failures, Reduce Downtime, and Improve Manufacturing Efficiency.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#dashboard" class="btn btn-primary"><i data-lucide="layout-dashboard"></i> View Dashboard</a>
+                        <a href="#simulations" class="btn btn-secondary"><i data-lucide="play-circle"></i> Explore Simulations</a>
+                        <a href="#architecture" class="btn btn-outline"><i data-lucide="git-branch"></i> Project Architecture</a>
+                    </div>
+                </div>
+
+                <!-- Animated Statistics Deck -->
+                <div class="hero-stats-deck">
+                    <div class="stat-card" data-stat="92">
+                        <div class="stat-icon-wrapper cyan-glow">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" id="stat-accuracy">0</span><span class="stat-suffix">%</span>
+                        </div>
+                        <p class="stat-label">Prediction Accuracy</p>
+                    </div>
+
+                    <div class="stat-card" data-stat="25">
+                        <div class="stat-icon-wrapper emerald-glow">
+                            <i data-lucide="clock-arrow-down"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" id="stat-downtime">0</span><span class="stat-suffix">%</span>
+                        </div>
+                        <p class="stat-label">Downtime Reduction</p>
+                    </div>
+
+                    <div class="stat-card" data-stat="20">
+                        <div class="stat-icon-wrapper blue-glow">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" id="stat-life">0</span><span class="stat-suffix">%</span>
+                        </div>
+                        <p class="stat-label">Increase in Equipment Life</p>
+                    </div>
+
+                    <div class="stat-card" data-stat="18">
+                        <div class="stat-icon-wrapper red-glow">
+                            <i data-lucide="trending-down"></i>
+                        </div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" id="stat-cost">0</span><span class="stat-suffix">%</span>
+                        </div>
+                        <p class="stat-label">Maintenance Cost Reduction</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+                <span class="scroll-text">Scroll to Explore</span>
+            </div>
+        </section>
+
+        <!-- Problem Statement Section -->
+        <section id="challenges" class="section-padding background-dark-navy">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">The Problem Space</span>
+                    <h2 class="section-title">Challenges in PV Manufacturing</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Solar photovoltaic module manufacturing requires high-precision machinery operating under massive throughput requirements. Equipment degradation severely limits productivity.
+                    </p>
+                </div>
+
+                <div class="challenges-grid">
+                    <!-- Card 1 -->
+                    <div class="challenge-card">
+                        <div class="challenge-num">01</div>
+                        <div class="challenge-icon-box">
+                            <i data-lucide="zap-off"></i>
+                        </div>
+                        <h3>Unexpected Equipment Failure</h3>
+                        <p>Sudden failures in critical motors, conveyor belts, or lamination units lead to immediate line shutdowns without warning, rendering reactive maintenance highly inefficient.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="challenge-card">
+                        <div class="challenge-num">02</div>
+                        <div class="challenge-icon-box">
+                            <i data-lucide="alert-octagon"></i>
+                        </div>
+                        <h3>Production Downtime</h3>
+                        <p>PV assembly lines are highly synchronized sequential setups. A single component breakdown stalls the entire throughput, resulting in massive operational backlogs.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="challenge-card">
+                        <div class="challenge-num">03</div>
+                        <div class="challenge-icon-box">
+                            <i data-lucide="dollar-sign"></i>
+                        </div>
+                        <h3>High Maintenance Costs</h3>
+                        <p>Replacing complex components under emergency conditions incurs expedited shipment fees, dynamic contract premiums, and severe collateral damage to adjacent machines.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="challenge-card">
+                        <div class="challenge-num">04</div>
+                        <div class="challenge-icon-box">
+                            <i data-lucide="gauge-circle"></i>
+                        </div>
+                        <h3>Reduced Throughput</h3>
+                        <p>Operating degraded components at sub-optimal speeds to prevent failure reduces production volume and causes variations in solar cell lamination quality.</p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="challenge-card">
+                        <div class="challenge-num">05</div>
+                        <div class="challenge-icon-box">
+                            <i data-lucide="eye-off"></i>
+                        </div>
+                        <h3>Manual Inspection Limitations</h3>
+                        <p>Traditional inspection methods rely heavily on periodic calendar schedules and human auditory or visual checks, failing to spot microscopic sub-surface cracks or thermal fatigue.</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Infographic Flow -->
+                <div class="infographic-container">
+                    <h4 class="info-title">The Downward Operational Spiral</h4>
+                    <div class="info-flow">
+                        <div class="info-step border-red">
+                            <div class="info-icon text-red animate-pulse-red"><i data-lucide="flame"></i></div>
+                            <h5>1. Machine Failure</h5>
+                            <p>Degraded bearing breaks down</p>
+                        </div>
+                        <div class="info-arrow"><i data-lucide="chevrons-right"></i></div>
+                        <div class="info-step border-orange">
+                            <div class="info-icon text-orange"><i data-lucide="pause-circle"></i></div>
+                            <h5>2. Idle Downtime</h5>
+                            <p>Assembly line fully blocked</p>
+                        </div>
+                        <div class="info-arrow"><i data-lucide="chevrons-right"></i></div>
+                        <div class="info-step border-amber">
+                            <div class="info-icon text-amber"><i data-lucide="trending-up"></i></div>
+                            <h5>3. Cost Surge</h5>
+                            <p>Emergency repair expenses</p>
+                        </div>
+                        <div class="info-arrow"><i data-lucide="chevrons-right"></i></div>
+                        <div class="info-step border-yellow">
+                            <div class="info-icon text-yellow"><i data-lucide="package-x"></i></div>
+                            <h5>4. Production Loss</h5>
+                            <p>Failed delivery SLA targets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Architecture Section -->
+        <section id="architecture" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">Engineering Workflow</span>
+                    <h2 class="section-title">End-to-End Solution Architecture</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Our hybrid engineering pipeline maps physical machine anomalies into actionable diagnostic suggestions via machine learning analytics.
+                    </p>
+                </div>
+
+                <!-- Animated Interactive Flow Diagram -->
+                <div class="architecture-diagram-container">
+                    <div class="diagram-grid">
+                        <div class="diagram-node active" id="node-1" data-node="1">
+                            <div class="node-icon"><i data-lucide="factory"></i></div>
+                            <span class="node-title">PV Manufacturing Equipment</span>
+                            <span class="node-desc">Physical lamination/handling lines</span>
+                            <div class="pulse-ring"></div>
+                        </div>
+
+                        <div class="diagram-connector"><div class="connector-line"></div><i data-lucide="arrow-right" class="connector-arrow"></i></div>
+
+                        <div class="diagram-node" id="node-2" data-node="2">
+                            <div class="node-icon"><i data-lucide="cpu"></i></div>
+                            <span class="node-title">Virtual Sensors</span>
+                            <span class="node-desc">Vibration, Temp, Current data streams</span>
+                        </div>
+
+                        <div class="diagram-connector"><div class="connector-line"></div><i data-lucide="arrow-right" class="connector-arrow"></i></div>
+
+                        <div class="diagram-node" id="node-3" data-node="3">
+                            <div class="node-icon"><i data-lucide="binary"></i></div>
+                            <span class="node-title">MATLAB / Simulink</span>
+                            <span class="node-desc">Signal processing & physics-based modeling</span>
+                        </div>
+
+                        <div class="diagram-connector"><div class="connector-line"></div><i data-lucide="arrow-right" class="connector-arrow"></i></div>
+
+                        <div class="diagram-node" id="node-4" data-node="4">
+                            <div class="node-icon"><i data-lucide="brain"></i></div>
+                            <span class="node-title">Machine Learning Model</span>
+                            <span class="node-desc">Random Forest classifier training</span>
+                        </div>
+                    </div>
+
+                    <div class="diagram-vertical-connector"><div class="connector-vertical-line"></div><i data-lucide="arrow-down" class="connector-arrow"></i></div>
+
+                    <div class="diagram-grid reverse">
+                        <div class="diagram-node" id="node-7" data-node="7">
+                            <div class="node-icon"><i data-lucide="wrench"></i></div>
+                            <span class="node-title">Maintenance Recommendation</span>
+                            <span class="node-desc">Optimal repair scheduling & diagnostics</span>
+                        </div>
+
+                        <div class="diagram-connector reverse"><div class="connector-line"></div><i data-lucide="arrow-left" class="connector-arrow"></i></div>
+
+                        <div class="diagram-node" id="node-6" data-node="6">
+                            <div class="node-icon"><i data-lucide="bell"></i></div>
+                            <span class="node-title">Dashboard & Alerts</span>
+                            <span class="node-desc">Real-time SCADA UI warnings</span>
+                        </div>
+
+                        <div class="diagram-connector reverse"><div class="connector-line"></div><i data-lucide="arrow-left" class="connector-arrow"></i></div>
+
+                        <div class="diagram-node" id="node-5" data-node="5">
+                            <div class="node-icon"><i data-lucide="activity"></i></div>
+                            <span class="node-title">Failure Prediction Engine</span>
+                            <span class="node-desc">Remaining Useful Life (RUL) estimation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info panel for selected node -->
+                <div class="architecture-info-panel" id="architecture-detail-box">
+                    <div class="panel-header">
+                        <i data-lucide="info" class="text-cyan"></i>
+                        <h4 id="architecture-detail-title">PV Manufacturing Equipment (Active Stage)</h4>
+                    </div>
+                    <p id="architecture-detail-desc">Physical handling robots, induction heaters, lamination vacuum pumps, and motor-driven tracks. Operating variables are continuously stressed under critical temperature thresholds and cyclical pressure curves, necessitating ongoing operational health surveillance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MATLAB Simulations Section -->
+        <section id="simulations" class="section-padding background-dark-navy">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">Simulation Suite</span>
+                    <h2 class="section-title">MATLAB & Simulink Core Simulations</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Explore our pre-configured industrial simulation studies. Select a card to load the model outputs directly into the interactive dashboard console below.
+                    </p>
+                </div>
+
+                <div class="simulations-grid">
+                    <!-- Simulation Card 1 -->
+                    <div class="simulation-card active" data-sim="health">
+                        <div class="sim-card-header">
+                            <div class="sim-badge cyan">ACTIVE</div>
+                            <div class="sim-icon-box"><i data-lucide="activity"></i></div>
+                        </div>
+                        <h3>Equipment Health Monitoring</h3>
+                        <p class="sim-desc">
+                            Processes raw high-frequency sensor streams (Temperature, Vibration, and Current) using a hybrid physics-based state equation to compute the overall real-time structural health index.
+                        </p>
+                        <div class="sim-outputs">
+                            <div class="sim-output-tag"><i data-lucide="heart"></i> Health Score: <span class="text-cyan">Dynamic</span></div>
+                            <div class="sim-output-tag"><i data-lucide="shield-check"></i> Status: <span class="text-emerald">Safe Range</span></div>
+                            <div class="sim-output-tag"><i data-lucide="trending-up"></i> Trends: <span class="text-blue">Continuous Telemetry</span></div>
+                        </div>
+                        <button class="btn btn-outline btn-full btn-run-sim">
+                            <i data-lucide="play" class="play-ic"></i> Loaded in Dashboard
+                        </button>
+                    </div>
+
+                    <!-- Simulation Card 2 -->
+                    <div class="simulation-card" data-sim="failure">
+                        <div class="sim-card-header">
+                            <div class="sim-badge">STANDBY</div>
+                            <div class="sim-icon-box"><i data-lucide="brain-circuit"></i></div>
+                        </div>
+                        <h3>AI Failure Prediction</h3>
+                        <p class="sim-desc">
+                            Feeds standard deviations, kurtosis, and spectral density vectors into trained Decision Tree and Random Forest classifiers to predict structural breakdowns before they occur.
+                        </p>
+                        <div class="sim-outputs">
+                            <div class="sim-output-tag"><i data-lucide="percent"></i> Accuracy: <span class="text-cyan">92.4%</span></div>
+                            <div class="sim-output-tag"><i data-lucide="grid"></i> Confusion Matrix: <span class="text-blue">Loaded</span></div>
+                            <div class="sim-output-tag"><i data-lucide="alert-triangle"></i> Probability: <span class="text-red">Anomalous Spike</span></div>
+                        </div>
+                        <button class="btn btn-outline btn-full btn-run-sim">
+                            <i data-lucide="play" class="play-ic"></i> Run AI Prediction Simulation
+                        </button>
+                    </div>
+
+                    <!-- Simulation Card 3 -->
+                    <div class="simulation-card" data-sim="rul">
+                        <div class="sim-card-header">
+                            <div class="sim-badge">STANDBY</div>
+                            <div class="sim-icon-box"><i data-lucide="hourglass"></i></div>
+                        </div>
+                        <h3>Remaining Useful Life (RUL)</h3>
+                        <p class="sim-desc">
+                            Applies continuous Kalman Filtering and exponential degradation models to extrapolate health trends, determining the exact operational hours left before component failure.
+                        </p>
+                        <div class="sim-outputs">
+                            <div class="sim-output-tag"><i data-lucide="line-chart"></i> RUL Curve: <span class="text-cyan">Exponential</span></div>
+                            <div class="sim-output-tag"><i data-lucide="history"></i> Degradation Trend: <span class="text-orange">Visualized</span></div>
+                            <div class="sim-output-tag"><i data-lucide="calendar"></i> Forecast Window: <span class="text-red">Est. 124 Hrs</span></div>
+                        </div>
+                        <button class="btn btn-outline btn-full btn-run-sim">
+                            <i data-lucide="play" class="play-ic"></i> Run RUL Forecasting Simulation
+                        </button>
+                    </div>
+
+                    <!-- Simulation Card 4 -->
+                    <div class="simulation-card" data-sim="downtime">
+                        <div class="sim-card-header">
+                            <div class="sim-badge">STANDBY</div>
+                            <div class="sim-icon-box"><i data-lucide="bar-chart-3"></i></div>
+                        </div>
+                        <h3>Downtime Reduction Analysis</h3>
+                        <p class="sim-desc">
+                            Contrast comparison studies evaluating traditional calendar-based reactive maintenance versus modern state-of-the-art AI-driven predictive scheduling models.
+                        </p>
+                        <div class="sim-outputs">
+                            <div class="sim-output-tag"><i data-lucide="coins"></i> Cost Savings: <span class="text-emerald">+$45K/Year</span></div>
+                            <div class="sim-output-tag"><i data-lucide="clock"></i> Hours Saved: <span class="text-cyan">180 Hours</span></div>
+                            <div class="sim-output-tag"><i data-lucide="zap"></i> Optimization: <span class="text-blue">94% Efficiency</span></div>
+                        </div>
+                        <button class="btn btn-outline btn-full btn-run-sim">
+                            <i data-lucide="play" class="play-ic"></i> Run Downtime Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive SCADA/Industry 4.0 Dashboard -->
+        <section id="dashboard" class="section-padding dashboard-section">
+            <div class="container-fluid dashboard-container">
+                
+                <!-- SCADA Dashboard Header -->
+                <div class="dashboard-header">
+                    <div class="scada-meta">
+                        <div class="scada-pulse"></div>
+                        <div>
+                            <span class="scada-title">PV LINE #04 SIMULATOR CONSOLE</span>
+                            <span class="scada-sub">Industrial Internet of Things (IIoT) Digital Twin</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-mode-selector">
+                        <span class="mode-label">Active Simulation Profile:</span>
+                        <div class="current-mode-tag" id="active-mode-display">
+                            <i data-lucide="activity"></i> Equipment Health Monitoring
+                        </div>
+                    </div>
+
+                    <div class="scada-clock" id="dashboard-clock">
+                        SYSTEM RUNNING | 21:21:18
+                    </div>
+                </div>
+
+                <!-- Dashboard Content Grid -->
+                <div class="dashboard-grid-layout">
+                    
+                    <!-- Left: Control & Telemetry Panel -->
+                    <div class="dashboard-panel control-panel">
+                        <div class="panel-title-wrapper">
+                            <i data-lucide="sliders-horizontal" class="panel-icon text-cyan"></i>
+                            <h3>Sensor Telemetry Controller</h3>
+                        </div>
+                        
+                        <!-- Console Tabs -->
+                        <div class="control-panel-tabs">
+                            <button class="tab-btn active" id="tab-btn-sliders"><i data-lucide="sliders" class="play-ic"></i> Sliders</button>
+                            <button class="tab-btn" id="tab-btn-csv"><i data-lucide="file-spreadsheet" class="play-ic"></i> CSV Stream</button>
+                        </div>
+
+                        <!-- Pane 1: Manual Sliders -->
+                        <div class="control-pane" id="sliders-control-pane">
+                            <p class="panel-desc">Drag the sliders to simulate PV lamination machinery degradation. Notice how the predictive AI logic registers anomalies in real-time.</p>
+
+                            <!-- Slider 1 -->
+                            <div class="control-group">
+                                <div class="control-info">
+                                    <label for="slider-temp">Lamination Temp (°C)</label>
+                                    <span class="control-val font-display" id="val-temp">45.0</span>
+                                </div>
+                                <input type="range" id="slider-temp" min="20" max="130" value="45" class="slider slider-temp">
+                                <div class="control-bounds">
+                                    <span>20°C (Min)</span>
+                                    <span>Normal: 20-80</span>
+                                    <span>130°C (Max)</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 2 -->
+                            <div class="control-group">
+                                <div class="control-info">
+                                    <label for="slider-vib">Bearing Vibration (mm/s²)</label>
+                                    <span class="control-val font-display" id="val-vib">1.20</span>
+                                </div>
+                                <input type="range" id="slider-vib" min="0.1" max="7.5" step="0.1" value="1.2" class="slider slider-vib">
+                                <div class="control-bounds">
+                                    <span>0.1 (Min)</span>
+                                    <span>Normal: 0.1-2.5</span>
+                                    <span>7.5 (Max)</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 3 -->
+                            <div class="control-group">
+                                <div class="control-info">
+                                    <label for="slider-curr">Motor Drive Current (A)</label>
+                                    <span class="control-val font-display" id="val-curr">8.5</span>
+                                </div>
+                                <input type="range" id="slider-curr" min="3" max="25" step="0.5" value="8.5" class="slider slider-curr">
+                                <div class="control-bounds">
+                                    <span>3.0A (Min)</span>
+                                    <span>Normal: 5.0-15.0</span>
+                                    <span>25.0A (Max)</span>
+                                </div>
+                            </div>
+
+                            <div class="control-panel-footer">
+                                <button class="btn btn-outline btn-sm btn-full" id="btn-reset-sensors">
+                                    <i data-lucide="rotate-ccw"></i> Reset to Normal Conditions
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Pane 2: CSV Hardware Data Streamer -->
+                        <div class="control-pane hidden" id="csv-control-pane">
+                            <p class="panel-desc">Paste your physical sensor data below. Stream the rows second-by-second directly into our predictive SCADA terminal.</p>
+                            
+                            <div style="margin-bottom: 16px;">
+                                <textarea id="csv-data-input" rows="8" style="font-family: monospace; font-size: 10px; line-height: 1.3; background: rgba(7, 11, 25, 0.6); color: var(--color-accent); border: var(--border-light); width: 100%; padding: 8px; border-radius: var(--border-radius-sm); outline: none; resize: vertical;">Timestamp,Temperature_C,Vibration_mm_s2,Current_A,Machine_Health,Failure_Probability,Status
+1,42,0.8,7.2,98,2,Normal
+2,44,0.9,7.5,97,3,Normal
+3,45,1.0,7.8,96,4,Normal
+4,47,1.1,8.0,95,5,Normal
+5,50,1.3,8.2,93,7,Normal
+6,54,1.5,8.5,90,10,Normal
+7,58,1.8,9.0,87,15,Warning
+8,62,2.1,9.8,83,20,Warning
+9,66,2.4,10.5,78,28,Warning
+10,70,2.8,11.0,72,35,Warning
+11,74,3.2,11.8,65,45,Warning
+12,78,3.8,12.5,58,55,Warning
+13,82,4.2,13.2,50,65,Critical
+14,86,4.8,14.0,42,75,Critical
+15,90,5.3,15.0,35,82,Critical
+16,95,5.8,16.0,28,88,Critical
+17,100,6.2,17.0,20,93,Failure
+18,105,6.5,18.5,15,96,Failure
+19,110,6.8,20.0,10,98,Failure
+20,115,7.0,22.0,5,99,Failure</textarea>
+                            </div>
+
+                            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                                <button class="btn btn-primary btn-sm" id="btn-play-csv" style="flex: 1;"><i data-lucide="play"></i> Stream CSV</button>
+                                <button class="btn btn-outline btn-sm" id="btn-stop-csv" disabled style="flex: 1;"><i data-lucide="square"></i> Stop</button>
+                            </div>
+
+                            <div style="font-size: 11px; color: var(--color-text-secondary); text-align: center; border: 1px solid rgba(255,255,255,0.03); padding: 8px; border-radius: var(--border-radius-sm); background: rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 4px;">
+                                <div>Status: <strong id="csv-status-text" class="text-cyan">IDLE</strong></div>
+                                <div id="csv-progress-text">Stream progress: 0/20 packets</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle: Visual Telemetry Room -->
+                    <div class="dashboard-panel telemetry-panel">
+                        <div class="panel-title-wrapper">
+                            <i data-lucide="gauge" class="panel-icon text-cyan"></i>
+                            <h3>Real-Time Telemetry Gauges</h3>
+                        </div>
+
+                        <div class="gauges-container">
+                            <!-- Gauge 1 -->
+                            <div class="gauge-card">
+                                <div class="gauge-wrapper">
+                                    <svg class="radial-gauge-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-bg" cx="50" cy="50" r="40"></circle>
+                                        <circle class="gauge-progress" id="gauge-temp-circle" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <span class="gauge-val font-display" id="gauge-temp-num">45</span>
+                                        <span class="gauge-unit">°C</span>
+                                    </div>
+                                </div>
+                                <span class="gauge-name">Temperature</span>
+                            </div>
+
+                            <!-- Gauge 2 -->
+                            <div class="gauge-card">
+                                <div class="gauge-wrapper">
+                                    <svg class="radial-gauge-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-bg" cx="50" cy="50" r="40"></circle>
+                                        <circle class="gauge-progress" id="gauge-vib-circle" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <span class="gauge-val font-display" id="gauge-vib-num">1.2</span>
+                                        <span class="gauge-unit">mm/s²</span>
+                                    </div>
+                                </div>
+                                <span class="gauge-name">Vibration</span>
+                            </div>
+
+                            <!-- Gauge 3 -->
+                            <div class="gauge-card">
+                                <div class="gauge-wrapper">
+                                    <svg class="radial-gauge-svg" viewBox="0 0 100 100">
+                                        <circle class="gauge-bg" cx="50" cy="50" r="40"></circle>
+                                        <circle class="gauge-progress" id="gauge-curr-circle" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <span class="gauge-val font-display" id="gauge-curr-num">8.5</span>
+                                        <span class="gauge-unit">A</span>
+                                    </div>
+                                </div>
+                                <span class="gauge-name">Current</span>
+                            </div>
+                        </div>
+
+                        <!-- KPI deck -->
+                        <div class="dashboard-kpis-grid">
+                            <div class="kpi-micro-card">
+                                <span class="kpi-lbl">Machine Health</span>
+                                <span class="kpi-num font-display text-emerald" id="kpi-health">98%</span>
+                            </div>
+                            <div class="kpi-micro-card">
+                                <span class="kpi-lbl">Failure Probability</span>
+                                <span class="kpi-num font-display text-cyan" id="kpi-prob">2%</span>
+                            </div>
+                            <div class="kpi-micro-card">
+                                <span class="kpi-lbl">Remaining Useful Life</span>
+                                <span class="kpi-num font-display text-blue" id="kpi-rul">124 Hrs</span>
+                            </div>
+                            <div class="kpi-micro-card">
+                                <span class="kpi-lbl">Downtime Saved</span>
+                                <span class="kpi-num font-display text-purple">36 Hrs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: AI State & Recommendation Console -->
+                    <div class="dashboard-panel recommendation-panel">
+                        <!-- AI Predictive Status Indicator -->
+                        <div class="ai-status-wrapper">
+                            <div class="ai-status-card healthy" id="ai-status-indicator">
+                                <div class="status-pulse-light"></div>
+                                <div class="status-text-block">
+                                    <span class="status-subtitle">AI SYSTEM STATUS</span>
+                                    <span class="status-title font-display" id="ai-status-title">NORMAL</span>
+                                </div>
+                                <div class="status-icon"><i data-lucide="shield-check" id="ai-status-icon"></i></div>
+                            </div>
+                        </div>
+
+                        <!-- Maintenance Recommendation List -->
+                        <div class="recommendations-box">
+                            <h4><i data-lucide="tool" class="text-cyan"></i> Actionable Diagnostics</h4>
+                            <div class="rec-list" id="recommendation-list">
+                                <div class="rec-item text-success">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <div>
+                                        <strong>System Balanced</strong>
+                                        <p>No issues detected on active line bearings or cooling channels.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Logs Output Box -->
+                        <div class="logs-wrapper">
+                            <div class="logs-header">
+                                <span><i data-lucide="terminal" class="text-cyan"></i> telemetry.log</span>
+                                <span class="btn-clear-logs" id="clear-logs">Clear</span>
+                            </div>
+                            <div class="logs-body" id="dashboard-logs">
+                                <p>[21:21:10] SYSTEM INITIALIZED: PV SCADA active...</p>
+                                <p>[21:21:15] ML Model loaded: Random Forest classifier active.</p>
+                                <p class="text-success">[21:21:18] Telemetry OK: All variables in threshold boundaries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Dynamic Trend Plot -->
+                <div class="dashboard-panel chart-panel">
+                    <div class="chart-panel-header">
+                        <div class="panel-title-wrapper">
+                            <i data-lucide="line-chart" class="panel-icon text-cyan"></i>
+                            <h3>Visual Analytics & Trend Projection Engine</h3>
+                        </div>
+                        <div class="chart-toggles">
+                            <button class="btn btn-outline btn-sm active" id="btn-toggle-telemetry">Live Telemetry</button>
+                            <button class="btn btn-outline btn-sm" id="btn-toggle-model">Simulation Curves</button>
+                        </div>
+                    </div>
+                    <div class="chart-canvas-container">
+                        <canvas id="scadaLiveChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Results Section -->
+        <section id="results" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">Metrics & Benchmarks</span>
+                    <h2 class="section-title">Project Results & Performance Outcomes</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Quantified empirical achievements demonstrating standard system operation outcomes against our ML-guided predictive framework.
+                    </p>
+                </div>
+
+                <div class="results-grid">
+                    <!-- Text and Metrics Cards -->
+                    <div class="results-info">
+                        <div class="results-text-block">
+                            <h3>Significant Efficiency Multipliers</h3>
+                            <p>Using real-time telemetry gathered across multiple virtual sensors, the machine learning system dynamically identifies degradation trends that calendar-based methods overlook completely.</p>
+                        </div>
+                        
+                        <div class="kpi-outcomes-grid">
+                            <div class="kpi-outcome-card">
+                                <span class="kpi-val">92%</span>
+                                <span class="kpi-name">F-1 Score Prediction Accuracy</span>
+                            </div>
+                            <div class="kpi-outcome-card">
+                                <span class="kpi-val">25%</span>
+                                <span class="kpi-name">Manufacturing Downtime reduction</span>
+                            </div>
+                            <div class="kpi-outcome-card">
+                                <span class="kpi-val">20%</span>
+                                <span class="kpi-name">Equipment Lifetime extension</span>
+                            </div>
+                            <div class="kpi-outcome-card">
+                                <span class="kpi-val">18%</span>
+                                <span class="kpi-name">Reduced Over-Maintenance Cost</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison chart -->
+                    <div class="results-chart-box dashboard-panel">
+                        <h4>Annual Downtime Impact (Hours Saved)</h4>
+                        <p class="panel-desc">Comparison of maintenance methods over a 12-month validation cycle on a standard solar cell lamination track.</p>
+                        <div class="results-canvas-container">
+                            <canvas id="resultsComparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack Section -->
+        <section id="techstack" class="section-padding background-dark-navy">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">Core Stack</span>
+                    <h2 class="section-title">The Engineering Toolbox</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Built with robust mathematical modelling, signal processing frameworks, and advanced classification modeling toolkits.
+                    </p>
+                </div>
+
+                <div class="tech-grid">
+                    <!-- Tech Item 1 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="variable"></i></div>
+                        <h4>MATLAB Core</h4>
+                        <p>Mathematical calculations, fast Fourier transform filters, and data manipulation pipelines.</p>
+                    </div>
+                    <!-- Tech Item 2 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="box"></i></div>
+                        <h4>Simulink</h4>
+                        <p>Visual workspace for system dynamics modeling, virtual sensor deployment, and physical simulation loops.</p>
+                    </div>
+                    <!-- Tech Item 3 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="brain-circuit"></i></div>
+                        <h4>Machine Learning</h4>
+                        <p>Statistical algorithms trained to recognize telemetry patterns mapping directly to mechanical stress.</p>
+                    </div>
+                    <!-- Tech Item 4 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="git-merge"></i></div>
+                        <h4>Decision Trees</h4>
+                        <p>High-efficiency classification pathways evaluating signal boundary ranges for fast edge decisions.</p>
+                    </div>
+                    <!-- Tech Item 5 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="network"></i></div>
+                        <h4>Random Forest</h4>
+                        <p>Robust multi-tree ensemble system processing complex multi-variable interactions with 92% accuracy.</p>
+                    </div>
+                    <!-- Tech Item 6 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="bar-chart"></i></div>
+                        <h4>Data Analytics</h4>
+                        <p>Telemetry processing filters, kurtosis algorithms, and vibration trend analysis.</p>
+                    </div>
+                    <!-- Tech Item 7 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="presentation"></i></div>
+                        <h4>Dashboard SCADA</h4>
+                        <p>Industrial web control systems displaying real-time system diagnostics and machine metrics.</p>
+                    </div>
+                    <!-- Tech Item 8 -->
+                    <div class="tech-item-card">
+                        <div class="tech-icon"><i data-lucide="wrench"></i></div>
+                        <h4>Predictive Maint.</h4>
+                        <p>Combining RUL forecasts, diagnostic triggers, and optimal scheduling modules.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Scope / Roadmap Section -->
+        <section id="roadmap" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">Strategic Vision</span>
+                    <h2 class="section-title">Project Evolution Roadmap</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        From basic software simulation algorithms to full scale hardware and production-ready IIoT deployments.
+                    </p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Phase 1 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="binary"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 1</span>
+                            <h3>MATLAB Simulation</h3>
+                            <p>Designing physical plant model in Simulink. Injecting structural degradations to export high-fidelity validation data datasets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="box"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 2</span>
+                            <h3>Hardware Prototype</h3>
+                            <p>Assembling a micro-scale conveyor model with integrated DC motors, bearings, and temperature modules to mimic a real assembly track.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="cpu"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 3</span>
+                            <h3>ESP32 Sensor Integration</h3>
+                            <p>Deploying high-speed ESP32 boards equipped with ADXL345 vibration sensors and DS18B20 temperature probes to pipe analog telemetry.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="cloud"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 4</span>
+                            <h3>Cloud-Based Monitoring</h3>
+                            <p>Configuring MQTT brokers to route sensor payloads securely into cloud-based databases for continuous remote accessibility.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 5 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="smartphone"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 5</span>
+                            <h3>Mobile Application</h3>
+                            <p>Developing lightweight responsive diagnostic applications for factory engineers to receive real-time push alerts on equipment states.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 6 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="layers"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 6</span>
+                            <h3>Digital Twin Technology</h3>
+                            <p>Synthesizing 3D WebGL plant representations displaying synchronized spatial sensor mapping in response to real-time physical telemetry.</p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 7 -->
+                    <div class="timeline-node">
+                        <div class="timeline-badge"><i data-lucide="factory"></i></div>
+                        <div class="timeline-content">
+                            <span class="timeline-phase">PHASE 7</span>
+                            <h3>Industrial Deployment</h3>
+                            <p>Adapting interface protocols (Modbus, OPC UA) to pipe telemetry directly from production lines into our ML diagnostic pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section-padding background-dark-navy">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">The Infrastructure</span>
+                    <h2 class="section-title">AegisPV Technical Divisions</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Operated by specialized systems engineering groups, industrial AI laboratories, and hardware design divisions.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Advisor Card -->
+                    <div class="team-card advisor-card">
+                        <div class="team-img-wrapper">
+                            <div class="avatar-placeholder"><i data-lucide="shield-check"></i></div>
+                        </div>
+                        <div class="team-meta">
+                            <span class="team-role">SYSTEM SECURITY & AUDIT</span>
+                            <h3>Systems Advisory Board</h3>
+                            <p class="team-dept">Compliance, Standards & Research Liaison</p>
+                            <p class="team-college">Industrial Internet Consortium</p>
+                            <div class="team-links">
+                                <a href="#" aria-label="Documentation"><i data-lucide="file-text"></i></a>
+                                <a href="#" aria-label="Inquiries"><i data-lucide="mail"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 1 -->
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <div class="avatar-placeholder"><i data-lucide="brain"></i></div>
+                        </div>
+                        <div class="team-meta">
+                            <span class="team-role">PREDICTIVE AI MODELS</span>
+                            <h3>AI & Core Analytics Unit</h3>
+                            <p class="team-dept">Random Forest Classifiers & Data Pipelines</p>
+                            <p class="team-college">AegisPV Algorithmic Core Lab</p>
+                            <div class="team-links">
+                                <a href="#" aria-label="Repository"><i data-lucide="github"></i></a>
+                                <a href="#" aria-label="Inquiries"><i data-lucide="mail"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <div class="avatar-placeholder"><i data-lucide="layers"></i></div>
+                        </div>
+                        <div class="team-meta">
+                            <span class="team-role">DIGITAL TWIN DEPLOYMENTS</span>
+                            <h3>Simulations & Controls</h3>
+                            <p class="team-dept">Simulink Systems & Signal Filters</p>
+                            <p class="team-college">AegisPV Modeling Division</p>
+                            <div class="team-links">
+                                <a href="#" aria-label="Repository"><i data-lucide="github"></i></a>
+                                <a href="#" aria-label="Inquiries"><i data-lucide="mail"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <div class="avatar-placeholder"><i data-lucide="cpu"></i></div>
+                        </div>
+                        <div class="team-meta">
+                            <span class="team-role">HARDWARE & SENSORS</span>
+                            <h3>IIoT Wires & Integration</h3>
+                            <p class="team-dept">ESP32 Platforms & Modbus Bridges</p>
+                            <p class="team-college">AegisPV Hardware Lab</p>
+                            <div class="team-links">
+                                <a href="#" aria-label="Repository"><i data-lucide="github"></i></a>
+                                <a href="#" aria-label="Inquiries"><i data-lucide="mail"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-pretitle">Connect With Us</span>
+                    <h2 class="section-title">Request Enterprise Demo</h2>
+                    <div class="section-underline"></div>
+                    <p class="section-subtitle">
+                        Interested in applying AegisPV's predictive maintenance solutions to your manufacturing line? Connect with us below.
+                    </p>
+                </div>
+
+                <div class="contact-box-wrapper">
+                    <div class="contact-panel-info">
+                        <h3>Systems Repository</h3>
+                        <p>Evaluate AegisPV's technical components, algorithmic specifications, ML training pipelines, and custom SCADA terminal code.</p>
+                        
+                        <div class="contact-info-list">
+                            <div class="info-list-item">
+                                <i data-lucide="github" class="glow-cyan"></i>
+                                <div>
+                                    <strong>GitHub Enterprise</strong>
+                                    <a href="#" class="accent-link">github.com/aegis-pv/predictive-maintenance</a>
+                                </div>
+                            </div>
+                            <div class="info-list-item">
+                                <i data-lucide="folder-git2" class="glow-cyan"></i>
+                                <div>
+                                    <strong>MathWorks File Exchange</strong>
+                                    <a href="#" class="accent-link">mathworks.com/matlabcentral/aegispv</a>
+                                </div>
+                            </div>
+                            <div class="info-list-item">
+                                <i data-lucide="map-pin" class="glow-cyan"></i>
+                                <div>
+                                    <strong>Engineering Headquarters</strong>
+                                    <span>AegisPV Global Operations & Systems Lab</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-panel-form">
+                        <form id="project-contact-form" class="futuristic-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="contact-name" required placeholder=" ">
+                                    <label for="contact-name">Your Name</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="contact-email" required placeholder=" ">
+                                    <label for="contact-email">Email Address</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="contact-subject" required placeholder=" ">
+                                    <label for="contact-subject">Subject</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="contact-message" rows="5" required placeholder=" "></textarea>
+                                <label for="contact-message">Message or Query Details</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" id="btn-submit-contact">
+                                <i data-lucide="send"></i> Send Query Payload
+                            </button>
+                        </form>
+                        <div class="form-success-wrapper" id="form-success-box">
+                            <i data-lucide="check-circle" class="text-emerald success-icon"></i>
+                            <h3>Query Sent Successfully!</h3>
+                            <p>Thank you. Your message has been stored, and the team will get in touch with you shortly.</p>
+                            <button class="btn btn-outline btn-sm" id="btn-success-reset">Send Another Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="nav-logo">
+                    <i data-lucide="shield-alert" class="logo-icon glow-cyan"></i>
+                    <span class="logo-text">Aegis<span class="text-accent">PV</span></span>
+                </div>
+                <p>AI-Based Predictive Maintenance system designed for optimized High-throughput PV Assembly Lines. Minimized downtime. Advanced digital analytics.</p>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#hero">Overview</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#simulations">Simulations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Interactive Console</h4>
+                    <ul>
+                        <li><a href="#dashboard">Live SCADA</a></li>
+                        <li><a href="#dashboard">Sensors</a></li>
+                        <li><a href="#dashboard">Trend Plot</a></li>
+                        <li><a href="#results">Validation Results</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Project Details</h4>
+                    <ul>
+                        <li><a href="#techstack">Tech Stack</a></li>
+                        <li><a href="#roadmap">Evolution Timeline</a></li>
+                        <li><a href="#team">Technical Divisions</a></li>
+                        <li><a href="#contact">Contact Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 AegisPV Systems Group. All Rights Reserved. Enterprise IIoT Division.</p>
+                <div class="footer-legal">
+                    <span>Enterprise Solution Ready</span>
+                    <span class="footer-dot"></span>
+                    <span>Industry 4.0 Standard</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
